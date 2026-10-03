@@ -1,0 +1,15 @@
+import pandas as pd
+
+#DATABASE
+#:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+threat_db = {
+  "Threat_words":["winner","won","winning","congratulations","congrats","selected","chosen","shortlisted","prize","reward","bonus","gift card","sweepstakes","lottery","giveaway","unclaimed","pending","claim now","claim here","collect"],
+  "Risk_level" :[95, 95, 95, 95, 95,50, 50, 50, 50, 50, 50, 50, 95, 95, 95, 75, 75, 75, 75, 75]
+  }
+df = pd.DataFrame(threat_db)
+print(df)
+df.to_csv("phishing_words.csv", index=False)
+loaded_data = pd.read_csv("phishing_words.csv")
+print(loaded_data)
+
+#:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
